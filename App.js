@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import DiaryScreen from './DiaryScreen'
+import KeyScreen from './KeyScreen'
+import { hasApiKey } from './llmapi_groq'
 import { findPieces } from './pieceAi'
 import { findEmotionByPiece } from './emotions'
 import { COLORS } from './common'
@@ -11,6 +13,7 @@ export default function App() {
   const [diary, setDiary] = useState('')
   const [pieces, setPieces] = useState([]) // AI가 찾은 조각
   const [loading, setLoading] = useState(false)
+  const [keyReady, setKeyReady] = useState(hasApiKey()) // AI 키 준비 여부
 
   const onSave = (text) => {
     setDiary(text)
@@ -30,10 +33,13 @@ export default function App() {
         <Text style={styles.slogan}>오늘의 마음을 조각조각 들여다보기</Text>
       </View>
 
-      {screen == 'write' && <DiaryScreen onSave={onSave} />}
+      {/* 키가 없으면(배포 사이트) 먼저 키 입력 화면 */}
+      {!keyReady && <KeyScreen onReady={() => setKeyReady(true)} />}
+
+      {keyReady && screen == 'write' && <DiaryScreen onSave={onSave} />}
 
       {/* 4단계 확인용 임시 화면 (5단계에서 조각 확인 화면으로 바뀜) */}
-      {screen == 'pieces' && (
+      {keyReady && screen == 'pieces' && (
         <View style={styles.temp}>
           <Text style={styles.tempLabel}>오늘의 일기</Text>
           <Text style={styles.tempText}>{diary}</Text>

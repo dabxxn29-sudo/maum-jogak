@@ -1,5 +1,6 @@
 {
   "expo": {
+    "experiments": { "baseUrl": "/maum-jogak" },
     "name": "maum-jogak",
     "slug": "maum-jogak",
     "version": "1.0.0",

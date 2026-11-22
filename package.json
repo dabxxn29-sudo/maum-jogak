@@ -11,11 +11,16 @@
     "react-native": "0.88.1",
     "react-native-web": "^0.21.4"
   },
-  "scripts": {
+    "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "predeploy": "expo export -p web",
+    "deploy": "gh-pages --nojekyll -d dist -u \"dabxxn29-sudo <245093178+dabxxn29-sudo@users.noreply.github.com>\""
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
