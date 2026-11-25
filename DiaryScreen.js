@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.card,
     borderRadius: 20,
     padding: 20,
-    borderWidth: 1,
-    borderColor: COLORS.line,
   },
   date: { fontSize: 14, color: COLORS.quiet },
   question: { fontSize: 22, fontWeight: 'bold', color: COLORS.ink, marginTop: 6 },

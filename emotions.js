@@ -4,7 +4,7 @@
 
 export const EMOTIONS = [
   {
-    id: 'joy', label: '기쁨', icon: '☀️', weather: '맑음', color: '#FFE9A8',
+    id: 'joy', label: '기쁨', icon: '☀️', weather: '맑음', color: '#FFF3D1',
     pieces: [
       { name: '뿌듯함', meaning: '내가 해낸 일이 자랑스러울 때' },
       { name: '설렘', meaning: '좋은 일을 기다리며 마음이 들뜰 때' },
@@ -13,7 +13,7 @@ export const EMOTIONS = [
     ],
   },
   {
-    id: 'calm', label: '평온', icon: '⛅', weather: '구름 조금', color: '#D6ECD2',
+    id: 'calm', label: '평온', icon: '⛅', weather: '구름 조금', color: '#E3F1FC',
     pieces: [
       { name: '편안함', meaning: '걱정 없이 몸과 마음이 느긋할 때' },
       { name: '차분함', meaning: '마음이 고요하고 흔들리지 않을 때' },
@@ -22,7 +22,7 @@ export const EMOTIONS = [
     ],
   },
   {
-    id: 'sad', label: '슬픔', icon: '🌧️', weather: '비', color: '#CFE0F2',
+    id: 'sad', label: '슬픔', icon: '🌧️', weather: '비', color: '#D3DEEA',
     pieces: [
       { name: '서운함', meaning: '기대한 만큼 마음을 받지 못했을 때' },
       { name: '속상함', meaning: '일이 뜻대로 되지 않아 마음이 아플 때' },
@@ -31,7 +31,7 @@ export const EMOTIONS = [
     ],
   },
   {
-    id: 'anger', label: '분노', icon: '⛈️', weather: '폭풍', color: '#F6C9C4',
+    id: 'anger', label: '분노', icon: '⛈️', weather: '폭풍', color: '#DCE2F4',
     pieces: [
       { name: '짜증', meaning: '작은 일들이 계속 거슬릴 때' },
       { name: '억울함', meaning: '내 잘못이 아닌데 손해를 봤다고 느낄 때' },
@@ -40,7 +40,7 @@ export const EMOTIONS = [
     ],
   },
   {
-    id: 'fear', label: '두려움', icon: '☁️', weather: '흐림', color: '#DCDCE6',
+    id: 'fear', label: '두려움', icon: '☁️', weather: '흐림', color: '#E4E7EC',
     pieces: [
       { name: '불안', meaning: '나쁜 일이 생길 것 같아 마음이 놓이지 않을 때' },
       { name: '걱정', meaning: '앞으로의 일이 마음에 걸릴 때' },
@@ -49,7 +49,7 @@ export const EMOTIONS = [
     ],
   },
   {
-    id: 'surprise', label: '놀람', icon: '🌈', weather: '무지개', color: '#EBDDF7',
+    id: 'surprise', label: '놀람', icon: '🌈', weather: '무지개', color: '#F1E6FB',
     pieces: [
       { name: '당황', meaning: '예상 못 한 일에 어쩔 줄 모를 때' },
       { name: '놀라움', meaning: '생각지 못한 일에 깜짝 놀랐을 때' },
@@ -80,3 +80,6 @@ export const decideEmotion = (pieceNames) => {
   }
   return best // 조각이 없으면 null
 }
+
+// 조각을 고르지 않았을 때(잘 모르겠어요) 쓰는 카드 모양
+export const UNKNOWN = { icon: '🌫️', weather: '안개', label: '아직 이름 붙이지 못한 마음', color: '#EEF1F4' }
